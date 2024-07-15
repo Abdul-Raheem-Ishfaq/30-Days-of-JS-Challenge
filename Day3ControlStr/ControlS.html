@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Structure</title>
+  </head>
+  <body>
+    <h1>Hey Abdul!</h1>
+  </body>
+  <script>
+    //Activity 1:If-ELSE Statements
+    //Task 1
+    let x = 10;
+    if (x > 0) {
+      console.log("This number is positive");
+    } else if (x < 0) {
+      console.log("This number is negative");
+    } else {
+      console.log("This number is zero");
+    }
+    //Task 2
+    let age = x;
+    if (age >= 18) {
+      console.log("This person is eligible for this post");
+    } else {
+      console.log("This person is not eligible for this post");
+    }
+    //Activity 3:Nested If-else Statement
+    let y = 12;
+    let z = 39;
+    if (x > y && x > z) {
+      console.log(`${x} : This number is largest Number`);
+    } else if (y > x && y > z) {
+      console.log(`${y} : This number is largest Number`);
+    } else {
+      console.log(`${z} : This number is largest Number`);
+    }
+    //Activity 3 : Switch Case
+    //Task 4
+    function grade(score) {
+      const gradeNo = ["A", "B", "C", "D", "F"];
+
+      let gradeCase;
+      if (score >= 789 && score <= 880) {
+        gradeCase = "A";
+      } else if (score >= 689 && score <= 749) {
+        gradeCase = "B";
+      } else if (score >= 580 && score <= 660) {
+        gradeCase = "C";
+      } else if (score >= 550 && score <= 650) {
+        gradeCase = "D";
+      } else {
+        gradeCase = "F";
+      }
+
+      switch (gradeCase) {
+        case "A":
+          console.log(gradeNo[0]);
+          break;
+        case "B":
+          console.log(gradeNo[1]);
+          break;
+        case "C":
+          console.log(gradeNo[2]);
+          break;
+        case "D":
+          console.log(gradeNo[3]);
+          break;
+        default:
+          console.log("You are Fail", gradeNo[4]);
+          break;
+      }
+    }
+
+    grade(990);
+
+    //Activity 4:Conditional(Ternary) Operator
+    //Task 6
+    function checkEvenOdd(num) {
+      console.log(num % 2 == 0 ? "Even Number" : "Odd Number");
+    }
+    checkEvenOdd(9);
+    //Activity 6:Combining Conditions
+    //Task 7
+    function isLeapYear(year) {
+      if ((year % 4 === 0 && year !== 100) || year % 400) {
+        console.log(`${year} this is a leap year`);
+      } else {
+        console.log(`${year} this is not a leap year`);
+      }
+    }
+    isLeapYear(2030);
+    //Feature Request 1:Voting Eligibility Script
+    function voteCast(age) {
+      if (age >= 18) {
+        console.log(`Age is ${age} person can cast vote`);
+      } else {
+        console.log(`Age is ${age} and person can't cast vote`);
+      }
+    }
+    voteCast(10);
+    //Day of the week Script
+    function dayOFWeek(dayNum) {
+      const weekDays = [
+        "Sunday",
+        "MondaY",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      switch (dayNum) {
+        case 1:
+          console.log(weekDays[0]);
+          break;
+        case 2:
+          console.log(weekDays[1]);
+          break;
+        case 3:
+          console.log(weekDays[2]);
+          break;
+        case 4:
+          console.log(weekDays[3]);
+          break;
+        case 5:
+          console.log(weekDays[4]);
+          break;
+        case 6:
+          console.log(weekDays[5]);
+          break;
+        case 7:
+          console.log(weekDays[6]);
+          break;
+
+        default:
+          break;
+      }
+    }
+    dayOFWeek(3);
+    //Grade Assignment Script
+    function gradeBoy(scored) {
+      const securedGrade = ["A", "B", "C", "D", "F"];
+      let specifiedNo;
+      if (scored >= 790 && scored <= 880) {
+        specifiedNo = "A";
+      } else if (scored >= 690 && scored <= 789) {
+        specifiedNo = "B";
+      } else if (scored >= 690 && scored <= 789) {
+        specifiedNo = "C";
+      } else if (scored >= 590 && scored <= 689) {
+        specifiedNo = "D";
+      }
+      switch (specifiedNo) {
+        case "A":
+          console.log(securedGrade[0]);
+          break;
+        case "B":
+          console.log(securedGrade[1]);
+          break;
+        case "C":
+          console.log(securedGrade[2]);
+          break;
+        case "D":
+          console.log(securedGrade[3]);
+          break;
+
+        default:
+          console.log(securedGrade[4], "Fail");
+          break;
+      }
+    }
+    gradeBoy(440);
+  </script>
+</html>
