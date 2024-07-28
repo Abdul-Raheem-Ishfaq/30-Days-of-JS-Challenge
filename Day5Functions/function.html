@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>Hey Functions</h1>
+  </body>
+  <script>
+    //Activity 1:
+    //Task 1
+    function check(n) {
+      if (n % 2 == 0) {
+        console.log(`The number ${n} is even`);
+      } else {
+        console.log(`The number ${n} is odd`);
+      }
+    }
+    check(5);
+    //Task 2
+    let result = "";
+    function findSq(n) {
+      result = n * n;
+      console.log(`The square of ${n} is ${result}`);
+    }
+    findSq(4);
+    //Activity 2:Function Expression
+    //Task 3
+    function fineMax(val1, val2) {
+      if (val1 > val2) {
+        console.log(`${val1} is greater than ${val2}`);
+      } else if (val1 === val2) {
+        console.log(`${val1} and ${val2} are equal`);
+      } else {
+        console.log(`${val2} is greater than ${val1}`);
+      }
+    }
+    fineMax(2, 2);
+    //Task 4
+    let str1 = "How are you";
+    let str2 = "I am fine";
+    function conCat() {
+      let result = `${str1}.
+      ${str2}?`;
+      console.log(result);
+    }
+    conCat();
+    //Activity 3:Arrow Function
+    //Task 5
+    let num1 = 4;
+    let num2 = 5;
+    let addNumber = () => {
+      let result = num1 + num2;
+      console.log(`The sum of ${num1} and ${num2} is ${result}`);
+    };
+    addNumber();
+    //Task 6
+    let str3 = "How are you I am fine what's about you";
+    let returnVal = () => {
+      if ((str3 = "v")) {
+        console.log(false);
+      }
+    };
+    returnVal();
+    //Activity 4:Function Parameter
+    //Task 7
+    function product(val1, val2) {
+      let result = val1 * val2;
+      console.log(`The product of ${val1} and ${val2} is ${result}`);
+    }
+    product(3, 4);
+    //Task 8
+    function getInfo(name, age = 18) {
+      console.log(
+        `${name} thanks for your cooperation and you are under your ${age}`
+      );
+    }
+    getInfo("Abdul");
+    //Activity 8: High Order Functions
+    function repeat(func, times) {
+      for (let i = 0; i < times; i++) {
+        func();
+      }
+    }
+
+    // Example usage:
+    function greet() {
+      console.log("Hello!");
+    }
+
+    repeat(greet, 3);
+    //Task 2
+    function applyFunctions(func1, func2, value) {
+      const intermediateResult = func1(value);
+      const finalResult = func2(intermediateResult);
+      return finalResult;
+    }
+
+    function square(x) {
+      return x * x;
+    }
+
+    function addOne(x) {
+      return x + 1;
+    }
+
+    const result1 = applyFunctions(square, addOne, 3);
+    console.log(result1);
+  </script>
+</html>
