@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hey Event!</h1>
+    <p id="demo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, optio
+      nesciunt facilis enim neque, quod quisquam, autem officia reiciendis
+      perspiciatis aliquid fugit unde!
+    </p>
+    <button class="btn">Click me</button>
+    <img id="pic" src="/projector.jpeg" width="300px" />
+    <button class="btn1">Click Me!</button>
+    <button class="btn2">Click Me!</button>
+    <input type="text" name="text" id="text" />
+    <input type="text" name="myInput" id="myInput" />
+    <p id="displayValue"></p>
+    <form action="get" id="form">
+      <label for="user">Username:</label>
+      <input type="text" name="user" id="user" placeholder="@username" /><br />
+      <label for="pwd">Password:</label>
+      <input type="password" name="pwd" id="pwd" /><br />
+      <input type="submit" value="submit" id="submit" />
+    </form>
+  </body>
+  <script>
+    //Activity 1:Basic Event Handling
+    //Task 1
+    let para = document.getElementById("demo");
+    let btn = document.querySelector(".btn");
+    let btn1 = document.querySelector(".btn1");
+    btn.addEventListener("click", () => {
+      para.innerHTML = "Hey EveryoNE!";
+    });
+    //Task 2
+    let img = document.getElementById("pic");
+    img.addEventListener("dblclick", () => {
+      if (img.style.display === "none") {
+        img.style.display = "block"; // Change display to "block"
+      } else {
+        img.style.display = "none"; // Hide the image
+      }
+    });
+    btn1.addEventListener("mouseover", () => {
+      document.body.style.backgroundColor = "rgb(100,4,20)";
+    });
+    btn1.addEventListener("mouseout", () => {
+      document.body.style.backgroundColor = "";
+    });
+    //Activity 3:Keyboard Events
+    //Task 1
+    let txt = document.getElementById("text");
+    txt.addEventListener("keyup", (e) => {
+      console.log("Key pressed:", e.key);
+    });
+    //Task 2
+
+    const inputElement = document.getElementById("myInput");
+    const displayValue = document.getElementById("displayValue");
+    inputElement.addEventListener("keyup", (e) => {
+      const inputValue = e.target.value;
+      displayValue.innerHTML = `Display Value: ${inputValue}`;
+    });
+    //Activity 4:Form Events
+    //Task 1
+    const username = document.getElementById("username");
+    const password = document.getElementById("pwd");
+    const form = document.getElementById("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const submit = document.getElementById("submit");
+      if (e.username.value === "" && e.password.value === "") {
+        console.log("Enter some value");
+      } else {
+        console.log(e.submit);
+      }
+    });
+  </script>
+</html>

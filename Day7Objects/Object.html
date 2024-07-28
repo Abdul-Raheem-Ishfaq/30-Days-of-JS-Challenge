@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Hey Objects!</h1>
+  </body>
+  <script>
+    //Activity 1
+    //Task 1
+    const book = {
+      name: "Abdul",
+      title: "Shaba",
+      year: 2019,
+      getInfo: function () {
+        return `${this.name} is returned by that ${this.year}`;
+      },
+      getINfo: function (newYear) {
+        this.newYear = newYear;
+        return `${book.name} is returned by that person ${book.newYear}`;
+      },
+    };
+    console.log(book);
+    //Task 2
+    console.log(`${book.name} is writing a book in ${book.year}`);
+    //Activity 2:Object Methods
+    //Task 1
+    console.log(book.getInfo(2020));
+    console.log(book.getINfo(2020));
+
+    //nested objects
+    const library = {
+      name: "MyLibrary",
+      location: "Kasur",
+      books: [
+        {
+          title: "Booking",
+          page: 143,
+          year: 2019,
+        },
+        {
+          title: "Islam",
+          page: 2023,
+          author: "Mufti Taqi Usmani",
+        },
+      ],
+    };
+    console.log(library.name);
+    console.log(library.location);
+    console.log(library.books[0].year);
+    console.log(library.books[0].title);
+    console.log(library.books[1].author);
+    //Activity 4:Iteration
+    //Task 1
+    for (const key in book) {
+      console.log(key);
+    }
+    //Task 2
+    Object.keys(book).forEach((key) => {
+      `Key:${key},Value: ${book[key]}`;
+    });
+    Object.values(book).forEach((value) => {
+      `Value:${value},Values: ${book[value]}`;
+    });
+  </script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hey Arrays</h1>
+  </body>
+  <script>
+    //Activity 1:Array Creation and Access
+    //Task 1
+    const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(number);
+    //Task 2
+    console.log(number[0]);
+    console.log(number[number.length - 1]);
+    //Activity 2:Array Method
+    //Task 1
+    number.push(11);
+    console.log(number);
+    //Task 2
+    number.pop();
+    console.log(number);
+    //Task 3
+    number.unshift(100);
+    console.log(number);
+    //Task 4
+    number.shift();
+    console.log(number);
+    //Activity 3:Intermediate Array methods
+    //Task 1
+    const mapArray = number.map((num) => num * num);
+    console.log(mapArray);
+    //Task 2
+    const evenNumber = number.filter((num) => num % 2 === 0);
+    console.log(evenNumber);
+    //Task 3
+    const reduceMethod = number.reduce(
+      (accumulator, current, value) => accumulator + current
+    );
+    console.log(reduceMethod);
+    //Activity 4:Array Iteration
+    //Array Iteration
+    for (let i = 0; i < number.length; i++) {
+      const element = number[i];
+      console.log(element);
+    }
+    number.forEach((num) => {
+      console.log(`The index of number ${num} `);
+    });
+    //Activity 5:Multidimensional Array
+    //Task 1
+    const matrix = [
+      [1, 2, 3, 4, 5],
+      [6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15],
+    ];
+    for (let i = 0; i < matrix.length; i++) {
+      for (let j = 0; j < matrix[i].length; j++) {
+        console.log(`Element at [${i}][${j}]:`, matrix[i][j]);
+      }
+    }
+    //Task 2
+    console.log(matrix[0][3]);
+    console.log(matrix[2][3]);
+    console.log(matrix[1][2]);
+    console.log(matrix[2][6]);
+  </script>
+</html>
