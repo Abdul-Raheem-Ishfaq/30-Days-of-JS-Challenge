@@ -21,11 +21,34 @@
     <p id="displayValue"></p>
     <form action="get" id="form">
       <label for="user">Username:</label>
-      <input type="text" name="user" id="user" placeholder="@username" /><br />
+      <input
+        type="text"
+        name="user"
+        id="user"
+        placeholder="@username"
+        onfocus="myFunction()"
+      /><br />
       <label for="pwd">Password:</label>
       <input type="password" name="pwd" id="pwd" /><br />
       <input type="submit" value="submit" id="submit" />
     </form>
+    <br /><br />
+
+    <!-- //Change using addEventListener to selct paragarah -->
+    <select name="dropdown" id="dropdown" class="dropdown">
+      <option value="pakistan">Pakistan</option>
+      <option value="indonesia">Indonesia</option>
+      <option value="malysia">Malysia</option>
+      <option value="afghanistan">Afghanistan</option>
+    </select>
+    <p class="display"></p>
+    <!-- //List item  -->
+    <ul class="list">
+      <li placeholder>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>About Us</li>
+    </ul>
   </body>
   <script>
     //Activity 1:Basic Event Handling
@@ -67,17 +90,33 @@
     });
     //Activity 4:Form Events
     //Task 1
-    const username = document.getElementById("username");
-    const password = document.getElementById("pwd");
-    const form = document.getElementById("form");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const submit = document.getElementById("submit");
-      if (e.username.value === "" && e.password.value === "") {
-        console.log("Enter some value");
-      } else {
-        console.log(e.submit);
+    document.addEventListener("DOMContentLoaded", (e) => {
+      const myDropdown = document.getElementById("dropdown");
+      const displayValue = document.getElementById("displayValue");
+      myDropdown.addEventListener("change", () => {
+        displayValue.textContent = `The value is ${myDropdown.value}`;
+      });
+    });
+    //Task 2
+    const list = document.querySelector(".list");
+    list.addEventListener("click", (e) => {
+      if (e.target && e.target.nodeName === "LI") {
+        console.log("Now you have on the page ", e.target.textContent);
       }
     });
+    //Task 3
+    const parentElement = document.createElement("div");
+    document.body.appendChild(parentElement);
+
+    parentElement.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        // Use uppercase "BUTTON"
+        alert("button clicked");
+      }
+    });
+
+    const originalElement = document.createElement("button");
+    originalElement.textContent = "I am a new button";
+    parentElement.appendChild(originalElement);
   </script>
 </html>
